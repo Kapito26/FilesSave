@@ -13,19 +13,19 @@ public class Main {
         GameProgress gameProgress3 = new GameProgress(76, 9, 2, 202.12);
 
         //Сохранить сериализованные объекты GameProgress в папку savegames из предыдущей задачи
-        String CurrentDir = "D:/Games/savegames/";
+        String currentDir = "D:/Games/savegames/";
 
-        saveGame(gameProgress1, CurrentDir + "save1.dat");
-        saveGame(gameProgress2, CurrentDir + "save2.dat");
-        saveGame(gameProgress3, CurrentDir + "save3.dat");
+        saveGame(gameProgress1, currentDir + "save1.dat");
+        saveGame(gameProgress2, currentDir + "save2.dat");
+        saveGame(gameProgress3, currentDir + "save3.dat");
 
         //Созданные файлы сохранений из папки savegames запаковать в архив zip
         String Files[] = {"save1.dat", "save2.dat", "save3.dat"};
-        zipFiles(CurrentDir, "zip.zip", Files);
+        zipFiles(currentDir, "zip.zip", Files);
 
         // Удалить файлы сохранений, лежащие вне архива
         for (int i = 0; i < Files.length; i++) {
-            File newF = new File(CurrentDir, Files[i]);
+            File newF = new File(currentDir, Files[i]);
             if (newF.exists()) {
                 newF.delete();
             }
